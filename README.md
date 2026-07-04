@@ -1,13 +1,18 @@
 # POS Mobile Demo
 
-This Flutter app is a mobile demo client for the Web POS project. It is built to show how the existing restaurant POS workflow can also work on a mobile screen.
+This Flutter app is a mobile demo client for the Web POS project. It shows how the existing restaurant POS workflow can also work on a mobile screen.
 
-## Purpose
+## What It Is
 
-- Demo companion app for the Web POS system
-- Connects to the same Node/Express backend API used by the web app
-- Includes employee login, tables, orders, menu ordering, and dashboard screens
-- Intended for portfolio and job application presentation
+The mobile app is a companion demo for the main Web POS system. It reuses the same backend API and presents a smaller mobile-focused interface for common restaurant workflows.
+
+## How It Works
+
+1. A staff member signs in from the mobile app.
+2. The app keeps the authenticated session with the backend.
+3. The app loads tables, menus, items, orders, and dashboard data from the API.
+4. Staff can create orders and update order status from the mobile interface.
+5. The backend remains the single source of truth for both web and mobile clients.
 
 ## Tech Stack
 
@@ -16,30 +21,23 @@ This Flutter app is a mobile demo client for the Web POS project. It is built to
 - HTTP API client
 - Android Emulator support
 
-## Default API
+## Main Features
 
-The app uses this default API URL for Android Emulator:
-
-```text
-http://10.0.2.2:5000
-```
-
-You can override it when running the app:
-
-```powershell
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:5000
-```
+- Employee login and registration
+- Table overview
+- Order list and order status actions
+- Menu browsing and cart flow
+- Dashboard summary
 
 ## Run
 
 Start the backend first, then run the mobile app:
 
 ```powershell
-cd D:\PROJECT\pos-mobile
 flutter pub get
-flutter run -d emulator-5554 --dart-define=API_BASE_URL=http://10.0.2.2:5000
+flutter run
 ```
 
 ## Note
 
-This repository is a demo mobile version of the Web POS project, not a replacement for the main web application.
+This repository is a demo mobile version of the Web POS project, not a replacement for the main web application. Sensitive configuration and deployment values should be managed locally, not documented or committed to Git.
